@@ -27,12 +27,17 @@ then
 fi
 
 # insert configs
+echo "${YELLOW}Installing Updates${NC}"
+./bin/gpm selfupgrade
+./bin/gpm update
+
+# insert configs
 echo "${YELLOW}Copying default configurations${NC}"
 cp -r kick-it/* .
 cp -r kick-it/.[a-zA-Z0-9]* ./
 
 # insert ddevc config and set hostname
-read -p "Hostname for ddev? [e. g. deine-mudda or projectname]: " ddevhostname
+read -p "Hostname for ddev? [e. g. project-name]: " ddevhostname
 if [ -z "$ddevhostname" ]
 then
     echo "${RED}Please configure ddev manually!${NC}"
@@ -47,7 +52,11 @@ fi
 read -p "Is there a repository for a theme already? [yes]: " yn
 if echo "$yn" | grep -iq "^y" ;then
     read -p "Whats the git URL?: " themerepo
-    theme=$(basename $themerepo | grep -E -o '^([^.]+)' )
+    read -p "Divergent folder name? [hit Return to skip]: " theme
+    if [ -z "$theme" ]
+    then
+        theme=$(basename $themerepo | grep -E -o '^([^.]+)' )
+    fi
 
     echo "${YELLOW}Downloading Theme${NC}"
 
