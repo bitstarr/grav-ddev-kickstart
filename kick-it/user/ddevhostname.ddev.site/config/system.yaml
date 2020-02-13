@@ -1,0 +1,14 @@
+cache:
+  enabled: false
+
+debugger:
+  enabled: true
+  twig: true
+  shutdown:
+    close_connection: true
+
+errors:
+  display: true
+  log: true
+
+dev_mode: true
