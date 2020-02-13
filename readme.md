@@ -17,3 +17,12 @@ git clone https://github.com/bitstarr/grav-ddev-kickstart.git .
 ./kickstart.sh
 ````
 
+# What It Does
+
+* Download and extract the latest grav including the admin plugin
+* Install Plugins defined in ``kick-it/plugins.txt``
+* Copying Configurations from ``kick-it``
+* Ask for a theme repository. If given, it will clone it and change the appropriate grav setting
+* Adds a user
+* cleans up (including removing all files of this repository)
+

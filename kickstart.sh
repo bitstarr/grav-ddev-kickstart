@@ -6,14 +6,13 @@ CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
 echo "Initial cleanup"
-# rm readme.md LICENCE
-# rm -rf .git
+rm readme.md LICENSE
 
 # download grav an unpack in current folder
-echo "Downloading grav CMS"
-#curl -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/latest
+echo "${YELLOW}Downloading grav CMS${NC}"
+curl -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/latest
 unzip grav-admin.zip -d ./ > /dev/null
-# rm grav-admin.zip
+rm grav-admin.zip
 mv -n grav-admin/* ./
 mv -n grav-admin/.[!.]* ./
 rm -rf grav-admin/
@@ -21,15 +20,14 @@ rm -rf grav-admin/
 # install plugins from list
 if [ -f kick-it/plugins.txt ]
 then
-    echo "Installing plugins"
+    echo "${YELLOW}Installing plugins${NC}"
     plugins=$(paste -sd ' ' < kick-it/plugins.txt)
     bin/gpm install $plugins
     rm kick-it/plugins.txt
 fi
 
-
 # insert configs
-echo "Copying default configurations"
+echo "${YELLOW}Copying default configurations${NC}"
 cp -r kick-it/* .
 cp -r kick-it/.[a-zA-Z0-9]* ./
 
@@ -44,16 +42,17 @@ else
     echo "Hostname for ddev set to ${GREEN}$ddevhostname${NC}"
 fi
 
-
 # do we have a theme?
 # check it out
 read -p "Is there a repository for a theme already? [yes]: " yn
 if echo "$yn" | grep -iq "^y" ;then
     read -p "Whats the git URL?: " themerepo
-
-    git clone $themerepo user/themes/
-
     theme=$(basename $themerepo | grep -E -o '^([^.]+)' )
+
+    echo "${YELLOW}Downloading Theme${NC}"
+
+    git clone $themerepo user/themes/$theme
+
     sed -i "s/\(^  theme\: \).*/\1$theme/" user/config/system.yaml
     echo "Theme set to ${GREEN}$theme${NC}"
 fi
@@ -67,15 +66,12 @@ fi
 # TODO - you will have to setup the sync plugin by hand for now
 
 # add user
-echo "Adding a user"
-./bin/plugin login newuser
+echo "${YELLOW}Adding a user${NC}"
+./bin/plugin login newuser -s enabled
 
 # clean up
-# remove .github folder, codeofconduct, etc. from grav
-# remove our own .git folder and our self (kickstart.sh)
-
-echo "Final cleanup"
-rm README.md LICENCE.txt CONTRIBUTING.md CODE_OF_CONDUCT.md CHANGELOG.md
-rm -rf .github
+echo "${YELLOW}Final cleanup${NC}"
+rm README.md LICENSE.txt CONTRIBUTING.md CODE_OF_CONDUCT.md CHANGELOG.md kickstart.sh
+rm -rf .git .github kick-it
 
 echo "We are done here. ${CYAN}Happy coding!${NC}"
