@@ -1,0 +1,7 @@
+enabled: true
+built_in_css: false
+base_classes: notice
+level_classes:
+  - notice--blank
+  - notice--warning
+  - notice--error

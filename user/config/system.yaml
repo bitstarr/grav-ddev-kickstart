@@ -1,0 +1,19 @@
+home:
+  alias: '/home'
+
+pages:
+  theme: quark
+  markdown:
+    extra: true
+  process:
+    markdown: true
+    twig: true
+  frontmatter:
+    process_twig: true
+
+session:
+  initialize: false
+  name: grav-site
+
+username_regex: '^[a-z0-9_-]{3,16}$'
+pwd_regex: '^[ -~]{8,}$'

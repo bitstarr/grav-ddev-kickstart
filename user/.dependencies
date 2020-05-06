@@ -1,0 +1,41 @@
+git:
+    problems:
+        url: https://github.com/getgrav/grav-plugin-problems
+        path: user/plugins/problems
+        branch: master
+    error:
+        url: https://github.com/getgrav/grav-plugin-error
+        path: user/plugins/error
+        branch: master
+    markdown-notices:
+        url: https://github.com/getgrav/grav-plugin-markdown-notices
+        path: user/plugins/markdown-notices
+        branch: master
+    form:
+        url: https://github.com/getgrav/grav-plugin-form
+        path: user/plugins/form
+        branch: master
+    email:
+        url: https://github.com/getgrav/grav-plugin-email
+        path: user/plugins/email
+        branch: master
+    login:
+        url: https://github.com/getgrav/grav-plugin-login
+        path: user/plugins/login
+        branch: master
+    admin:
+        url: https://github.com/getgrav/grav-plugin-admin
+        path: user/plugins/admin
+        branch: master
+    devtools:
+        url: https://github.com/getgrav/grav-plugin-devtools
+        path: user/plugins/devtools
+        branch: master
+    svg-extension:
+        url: https://github.com/bitstarr/grav-plugin-svg-extension
+        path: user/plugins/svg-extension
+        branch: master
+    quark:
+        url: https://github.com/getgrav/grav-theme-quark
+        path: user/themes/quark
+        branch: master

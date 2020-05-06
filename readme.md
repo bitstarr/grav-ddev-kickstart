@@ -1,28 +1,43 @@
 # Quickly start working with grav
 
-This little helper assumes the following:
+This is a boilerplate for starting a new project with grav.
 
-* You don't want to store the whole grav core in your version control
-* You have a repository containing your theme
-* You are going to use git-sync plugin with a separate repository
+## Initialisation
 
-# Usage
-
-Clone the content of this repo in your desired folder and run the script from inside.
+To initialize a new project, clone the content of this repo in your desired folder and run ``make init`` from inside this folder.
 
 ````
 mkdir my-project
 cd my-project
 git clone https://github.com/bitstarr/grav-ddev-kickstart.git .
-./kickstart.sh
+make init
 ````
 
-# What It Does
+### What it does
 
-* Download and extract the latest grav including the admin plugin
-* Install Plugins defined in ``kick-it/plugins.txt``
-* Copying Configurations from ``kick-it``
+* Download and extract the latest grav
+* Remove unneccesary stuff from the download
+* Move the downloaded grav to root directory, so its also your webroot
+* Install Plugins and themes defined in ``user/.dependencies``
+* Upgrade grav and its plugins and themes, just to be sure
+* Ask for a hostname to use with ddev and provide domain specific configurations
 * Ask for a theme repository. If given, it will clone it and change the appropriate grav setting
-* Adds a user
-* cleans up (including removing all files of this repository)
+* Ask to add a new user
+* Removing the .git folder of the kickstart, fresh git init, provide an inital readme
 
+## Project Installation
+
+So you started a new project, customized some config settings, added content, developed a theme and pushed it all in a git repository. All based on this boilerplate - nice move!
+
+This means in your repo are ``user`` and ``.ddev`` folder as well as readme, Makefile and other stuff.
+
+A new team member wil join the project and clones this your repo. To get up and running use ``make install``. After that you can spin up ``ddev``
+
+### What it does
+
+* Download and extract the latest grav
+* Remove unneccesary stuff from the download
+* Move the downloaded grav to root directory, so its also your webroot
+* Install Plugins and themes defined in ``user/.dependencies``
+* Upgrade grav and its plugins and themes, just to be sure
+* Ask to add a new user

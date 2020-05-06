@@ -1,0 +1,7 @@
+enabled: true
+built_in_css: false
+a11y: true
+base_class: details
+title_class: details__title
+trigger_class: details__trigger
+content_class: details__content textflow

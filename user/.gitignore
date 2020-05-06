@@ -1,0 +1,23 @@
+# Grav Specific
+accounts/*
+!accounts/.*
+data/*
+!data/.*
+plugins/*
+!plugins/.*
+themes/*
+!themes/.*
+
+# OS Generated
+.DS_Store*
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Icon?
+Thumbs.db
+*.swp
+
+# phpstorm
+.idea/*

@@ -1,0 +1,20 @@
+title: 'Website Title'
+default_lang: de
+author:
+  name: 'Joe Bloggs'
+  email: joe@example.com
+metadata:
+  description: 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+summary:
+  enabled: true
+  format: short
+  size: 200
+  delimiter: '==='
+blog:
+  route: /blog
+
+minor_menu:
+  - title: Impressum
+    url: /impressum
+  - title: Datenschutz
+    url: /datenschutz

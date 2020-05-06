@@ -1,4 +1,0 @@
-seo
-sitemap
-admin-power-tools
-devtools

@@ -1,0 +1,6 @@
+enabled: true
+built_in_css: false
+inline_css: false
+refresh_prevention: false
+client_side_validation: true
+inline_errors: false
