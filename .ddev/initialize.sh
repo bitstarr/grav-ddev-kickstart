@@ -5,6 +5,15 @@ YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
+# check if it was initialized already
+if [ -f index.php ]
+then
+    echo ""
+    echo "    ${RED}Whoops. Already initialized.${NC}"
+    echo ""
+    exit
+fi
+
 echo "${YELLOW}Initial cleanup${NC}"
 rm readme.md LICENSE
 
@@ -43,10 +52,12 @@ echo ""
 read -p "Hostname for ddev? [e. g. project-name]: " ddevhostname
 if [ -z "$ddevhostname" ]
 then
+    echo ""
     echo "${RED}Please configure ddev manually!${NC}"
 else
     sed -i "s/\(^name\: \).*/\1$ddevhostname/" .ddev/config.yaml
     mv user/ddevhostname.ddev.site/ user/$ddevhostname.ddev.site
+    echo ""
     echo "Hostname for ddev set to ${GREEN}$ddevhostname${NC}"
 fi
 
@@ -62,6 +73,7 @@ if echo "$yn" | grep -iq "^y" ;then
         theme=$(basename $themerepo | grep -E -o '^([^.]+)' )
     fi
 
+    echo ""
     echo "${YELLOW}Downloading Theme${NC}"
 
     git clone $themerepo user/themes/$theme
@@ -74,6 +86,7 @@ fi
 echo ""
 read -p "Do you want to add a user? [yes]: " yn
 if echo "$yn" | grep -iq "^y" ;then
+    echo ""
     echo "${YELLOW}Adding a user${NC}"
     ./bin/plugin login newuser -s enabled
 fi

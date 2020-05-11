@@ -5,6 +5,15 @@ YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
+# check if it was installed already
+if [ -f index.php ]
+then
+    echo ""
+    echo "    ${RED}Whoops. Already installed.${NC}"
+    echo ""
+    exit
+fi
+
 # download grav
 echo ""
 echo "${YELLOW}Downloading grav CMS${NC}"
