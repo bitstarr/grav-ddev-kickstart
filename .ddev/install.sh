@@ -40,7 +40,7 @@ echo "${YELLOW}Installing plugins${NC}"
 
 # update grav
 echo ""
-echo "${YELLOW}Installing Updates${NC}"
+echo "${YELLOW}Installing updates${NC}"
 ./bin/gpm selfupgrade
 ./bin/gpm update
 

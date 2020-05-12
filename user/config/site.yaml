@@ -13,8 +13,29 @@ summary:
 blog:
   route: /blog
 
-minor_menu:
-  - title: Impressum
-    url: /impressum
-  - title: Datenschutz
-    url: /datenschutz
+footer:
+  menu:
+    - title: Startseite
+      url: /
+    - title: Impressum
+      url: /impressum
+    - title: Datenschutz
+      url: /datenschutz
+    - title: Zertifikate
+      url: /zertifikate
+  social:
+    - title: Facebook
+      icon: facebook
+      url: http://www.facebook.com/XX
+    - title: Instagram
+      icon: instagram
+      url: https://www.instagram.com/XX
+    - title: Twitter
+      icon: twitter
+      url: http://www.twitter.com/XX
+    - title: Xing
+      icon: xing
+      url: http://www.xing.com/XX
+    - title: YouTube
+      icon: youtube
+      url: https://www.youtube.com/XX

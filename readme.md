@@ -41,3 +41,9 @@ A new team member wil join the project and clones this your repo. To get up and 
 * Install Plugins and themes defined in ``user/.dependencies``
 * Upgrade grav and its plugins and themes, just to be sure
 * Ask to add a new user
+
+## Requirements
+
+* ddev
+* PHP Cli
+* git

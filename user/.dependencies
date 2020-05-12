@@ -35,7 +35,3 @@ git:
         url: https://github.com/bitstarr/grav-plugin-svg-extension
         path: user/plugins/svg-extension
         branch: master
-    quark:
-        url: https://github.com/getgrav/grav-theme-quark
-        path: user/themes/quark
-        branch: master

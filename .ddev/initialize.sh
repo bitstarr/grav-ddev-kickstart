@@ -43,7 +43,7 @@ echo "${YELLOW}Installing plugins${NC}"
 
 # update grav
 echo ""
-echo "${YELLOW}Installing Updates${NC}"
+echo "${YELLOW}Installing updates${NC}"
 ./bin/gpm selfupgrade
 ./bin/gpm update
 
@@ -74,12 +74,16 @@ if echo "$yn" | grep -iq "^y" ;then
     fi
 
     echo ""
-    echo "${YELLOW}Downloading Theme${NC}"
+    echo "${YELLOW}Downloading theme${NC}"
 
     git clone $themerepo user/themes/$theme
 
     sed -i "s/\(^  theme\: \).*/\1$theme/" user/config/system.yaml
     echo "Theme set to ${GREEN}$theme${NC}"
+else
+    echo ""
+    echo "${YELLOW}Installing default theme${NC}"
+    bin/gpm install quark
 fi
 
 # add user
