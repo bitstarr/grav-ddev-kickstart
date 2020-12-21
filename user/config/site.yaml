@@ -4,6 +4,7 @@ author:
   name: 'Joe Bloggs'
   email: joe@example.com
 metadata:
+  generator: ''
   description: 'Grav is an easy to use, yet powerful, open source flat-file CMS'
 summary:
   enabled: true
@@ -21,8 +22,6 @@ footer:
       url: /impressum
     - title: Datenschutz
       url: /datenschutz
-    - title: Zertifikate
-      url: /zertifikate
   social:
     - title: Facebook
       icon: facebook

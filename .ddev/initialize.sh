@@ -77,6 +77,7 @@ if echo "$yn" | grep -iq "^y" ;then
     echo "${YELLOW}Downloading theme${NC}"
 
     git clone $themerepo user/themes/$theme
+    rm -fr git clone $themerepo user/themes/$theme/.git
 
     sed -i "s/\(^  theme\: \).*/\1$theme/" user/config/system.yaml
     echo "Theme set to ${GREEN}$theme${NC}"
@@ -105,6 +106,8 @@ sed -i "s/# ddevhostname.*/# $ddevhostname/g" readme.md
 echo ""
 echo "${YELLOW}Fresh git${NC}"
 git init
+git update-index --chmod=+x .ddev/initialize.sh
+git update-index --chmod=+x .ddev/install.sh
 
 echo ""
 echo "We are done here. ${GREEN}Happy coding!${NC}"
