@@ -1,0 +1,9 @@
+# use mailhog (comes with ddev enviroment)
+mailer:
+  engine: smtp
+  smtp:
+    server: localhost
+    port: 1025
+    encryption: none
+    user: ''
+    password: ''
