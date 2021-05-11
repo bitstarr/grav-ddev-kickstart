@@ -11,6 +11,9 @@ errors:
   display: true
   log: true
 
-dev_mode: true
 # let's use 3 character passwords on dev
 pwd_regex: '^[ -~]{3,}$'
+
+env:
+  state: dev
+  banner: false

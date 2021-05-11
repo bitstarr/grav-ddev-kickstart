@@ -15,5 +15,11 @@ session:
   initialize: false
   name: grav-site
 
-username_regex: '^[a-z0-9_-]{3,16}$'
+cache:
+  gzip: true
+
+  username_regex: '^[a-z0-9_-]{3,16}$'
 pwd_regex: '^[ -~]{8,}$'
+
+env:
+  state: production
