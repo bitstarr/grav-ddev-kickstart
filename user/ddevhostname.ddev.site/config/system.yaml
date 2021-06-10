@@ -11,6 +11,15 @@ errors:
   display: true
   log: true
 
+flex:
+  cache:
+    index:
+      enabled: false
+    object:
+      enabled: false
+    render:
+      enabled: false
+
 # let's use 3 character passwords on dev
 pwd_regex: '^[ -~]{3,}$'
 

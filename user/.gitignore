@@ -5,8 +5,13 @@ data/*
 !data/.*
 plugins/*
 !plugins/.*
+security.yaml
+versions.yaml
+
+# remove if you will make the theme part of your project
 themes/*
 !themes/.*
+
 
 # OS Generated
 .DS_Store*

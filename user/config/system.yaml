@@ -18,7 +18,11 @@ session:
 cache:
   gzip: true
 
-  username_regex: '^[a-z0-9_-]{3,16}$'
+images:
+  default_image_quality: 70
+  defaults:
+    loading: lazy
+
 pwd_regex: '^[ -~]{8,}$'
 
 env:
