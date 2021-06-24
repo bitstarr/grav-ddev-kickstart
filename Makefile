@@ -9,6 +9,8 @@ list:
 	@echo ""
 	@echo "  install      > install everything to run the project"
 	@echo "  update       > update grav and plugins to latest stable version"
+	@echo "  clear          > clear cache"
+	@echo ""
 	@echo "  user         > create a new user"
 	@echo "  theme        > create a new blank theme"
 	@echo "  plugin       > create a new blank plugin"
@@ -16,18 +18,29 @@ list:
 	@echo "  init         > prepare to setup a new project"
 	@echo ""
 
-.PHONY: install
-install:
-	.ddev/install.sh
-
 .PHONY: init
 init:
+	chmod +x .ddev/initialize.sh
 	.ddev/initialize.sh
+
+.PHONY: install
+install:
+	chmod +x .ddev/install.sh
+	.ddev/install.sh
 
 .PHONY: update
 update:
+	mv robots.txt robots.txt.bak
+	./bin/grav install
 	./bin/gpm selfupgrade
 	./bin/gpm update
+	mv robots.txt.bak robots.txt
+	git checkout readme.md
+	# git -C user/plugins/directus pull
+
+.PHONY: clear
+clear:
+	./bin/grav cache
 
 .PHONY: user
 user:
