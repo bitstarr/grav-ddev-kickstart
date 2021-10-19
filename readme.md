@@ -1,6 +1,10 @@
 # Quickly start working with grav
 
-This is a boilerplate for starting a new project with grav.
+This is a boilerplate for starting a new project with grav and run it locally with [ddev](https://github.com/drud/ddev) for development.
+
+## Befor you start
+
+Please update `user/.dependencies` with plugins and themes you need for your project. If you add a theme there, also set the theme config in `user/config/system.yaml` and select "none" when asked for a theme in the init process.
 
 ## Initialisation
 
@@ -13,37 +17,38 @@ git clone https://github.com/bitstarr/grav-ddev-kickstart.git .
 make init
 ````
 
-### What it does
+### What `init` does
 
 * Download and extract the latest grav
 * Remove unneccesary stuff from the download
 * Move the downloaded grav to root directory, so its also your webroot
-* Install Plugins and themes defined in ``user/.dependencies``
+* Install Plugins and themes defined in `user/.dependencies`
 * Upgrade grav and its plugins and themes, just to be sure
 * Ask for a hostname to use with ddev and provide domain specific configurations
-* Ask for a theme repository. If given, it will clone it and change the appropriate grav setting
+* Choose a theme to install (incl. an option to provide your own or none at all) and update the configuration
 * Ask to add a new user
 * Removing the .git folder of the kickstart, fresh git init, provide an inital readme
 
-## Project Installation
+## Project installation
 
 So you started a new project, customized some config settings, added content, developed a theme and pushed it all in a git repository. All based on this boilerplate - nice move!
 
-This means in your repo are ``user`` and ``.ddev`` folder as well as readme, Makefile and other stuff.
+This means in your repo are `user` and `.ddev` folder as well as readme, Makefile and other stuff.
 
-A new team member wil join the project and clones this your repo. To get up and running use ``make install``. After that you can spin up ``ddev``
+A new team member will join the project and clones this your repo. To get up and running use `make install`. After that you can spin up `ddev`.
 
-### What it does
+### What `install` does
 
 * Download and extract the latest grav
 * Remove unneccesary stuff from the download
 * Move the downloaded grav to root directory, so its also your webroot
-* Install Plugins and themes defined in ``user/.dependencies``
+* Install Plugins and themes defined in `user/.dependencies`
 * Upgrade grav and its plugins and themes, just to be sure
 * Ask to add a new user
 
 ## Requirements
 
-* ddev
-* PHP Cli
+* A Unix like shell
+* PHP ClI
 * git
+* ddev (optional)

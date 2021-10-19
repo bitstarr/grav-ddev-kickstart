@@ -1,55 +1,43 @@
-PHP_BIN             := php
-COMPOSER_BIN        := composer
-NPM_BIN				:= npm
-
-.PHONY: list
-list:
-	@echo ""
-	@echo "Useful targets:"
-	@echo ""
-	@echo "  install      > install everything to run the project"
-	@echo "  update       > update grav and plugins to latest stable version"
-	@echo "  clear          > clear cache"
-	@echo ""
-	@echo "  user         > create a new user"
-	@echo "  theme        > create a new blank theme"
-	@echo "  plugin       > create a new blank plugin"
-	@echo ""
-	@echo "  init         > prepare to setup a new project"
-	@echo ""
+C_RED		= \033[0;31m
+C_GREEN		= \033[0;32m
+C_YELLOW	= \033[0;33m
+C_CYAN		= \033[0;36m
+C_NC		= \033[0m # No Color
 
 .PHONY: init
-init:
-	chmod +x .ddev/initialize.sh
-	.ddev/initialize.sh
+init: is_installed grav_prepare update
+	@chmod +x .ddev/initialize.sh
+	@.ddev/initialize.sh
 
-.PHONY: install
-install:
-	chmod +x .ddev/install.sh
-	.ddev/install.sh
+is_installed:
+ifneq (,$(wildcard ./index.php))
+	@echo "$(C_RED)Already installed.$(C_NC)"
+	@exit 1
+endif
+	@echo "$(C_GREEN)Here we go.$(C_NC)"
+
+grav_prepare:
+	@echo ""
+	@echo "$(C_CYAN)Downloading and preparing grav CMS$(C_NC)"
+	@curl -o grav.zip -SL https://getgrav.org/download/core/grav/latest
+	@unzip grav.zip -d ./ > /dev/null
+	@rm grav.zip
+	@rm -rf grav/user/
+	@rm -rf grav/.github/
+	@rm grav/README.md grav/LICENSE.txt grav/CONTRIBUTING.md grav/CODE_OF_CONDUCT.md grav/CHANGELOG.md
+	@mv -n grav/* ./
+	@mv -n grav/.[!.]* ./
+	@rm -rf grav/
+	@mkdir -p user/data/flex-objects
 
 .PHONY: update
 update:
-	mv robots.txt robots.txt.bak
-	./bin/grav install
-	./bin/gpm selfupgrade
-	./bin/gpm update
-	mv robots.txt.bak robots.txt
-	git checkout readme.md
-	# git -C user/plugins/directus pull
-
-.PHONY: clear
-clear:
-	./bin/grav cache
-
-.PHONY: user
-user:
-	./bin/plugin login newuser -s enabled
-
-.PHONY: theme
-theme:
-	bin/plugin devtools new-theme
-
-.PHONY: plugin
-plugin:
-	bin/plugin devtools new-plugin
+	@echo ""
+	@echo "$(C_CYAN)Installing and updating dependencies$(C_NC)"
+	@mv robots.txt robots.txt.bak
+	@./bin/grav install
+	@./bin/gpm selfupgrade
+	@./bin/gpm update
+	@mv robots.txt.bak robots.txt
+	@git checkout readme.md
+#   @git -C user/plugins/directus pull

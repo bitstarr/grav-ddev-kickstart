@@ -1,0 +1,14 @@
+show_github_msg: false
+widgets_display:
+  dashboard-maintenance: 'true'
+  dashboard-statistics: 'true'
+  dashboard-notifications: 'false'
+  dashboard-feed: 'false'
+  dashboard-pages: 'true'
+hide_page_types:
+  - root
+  - form
+  - external
+  - error
+hide_modular_page_types:
+  # - modular/bullets

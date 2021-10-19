@@ -1,51 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
-
-# check if it was initialized already
-if [ -f index.php ]
-then
-    echo ""
-    echo "    ${RED}Whoops. Already initialized.${NC}"
-    echo ""
-    exit
-fi
-
-echo "${YELLOW}Initial cleanup${NC}"
-rm readme.md LICENSE
-
-# download grav
-echo ""
-echo "${YELLOW}Downloading grav CMS${NC}"
-curl -o grav.zip -SL https://getgrav.org/download/core/grav/latest
-unzip grav.zip -d ./ > /dev/null
-
-echo ""
-echo "${YELLOW}Preparing grav folders${NC}"
-rm grav.zip
-rm -rf grav/user/
-rm -rf grav/.github/
-rm grav/README.md grav/LICENSE.txt grav/CONTRIBUTING.md grav/CODE_OF_CONDUCT.md grav/CHANGELOG.md
-
-echo ""
-echo "${YELLOW}Setting grav in place${NC}"
-mv -n grav/* ./
-mv -n grav/.[!.]* ./
-rm -rf grav/
-
-# install plugins from .dependencies
-echo ""
-echo "${YELLOW}Installing plugins${NC}"
-./bin/grav install
-
-# update grav
-echo ""
-echo "${YELLOW}Installing updates${NC}"
-./bin/gpm selfupgrade
-./bin/gpm update
 
 # insert ddevc config and set hostname
 echo ""
@@ -53,63 +11,75 @@ read -p "Hostname for ddev? [e. g. project-name]: " ddevhostname
 if [ -z "$ddevhostname" ]
 then
     echo ""
-    echo "${RED}Please configure ddev manually!${NC}"
+    printf "${RED}Please configure ddev manually!${NC}\n"
 else
     sed -i "s/\(^name\: \).*/\1$ddevhostname/" .ddev/config.yaml
     mv user/ddevhostname.ddev.site/ user/$ddevhostname.ddev.site
+    sed -i "s/# ddevhostname.*/# $ddevhostname/g" .ddev/readme.md
     echo ""
-    echo "Hostname for ddev set to ${GREEN}$ddevhostname${NC}"
+    printf "Hostname for ddev set to ${GREEN}$ddevhostname${NC}\n"
 fi
 
 # do we have a theme?
 # check it out
 echo ""
-read -p "Shall we clone a theme from a repository? [yes]: " yn
-if echo "$yn" | grep -iq "^y" ;then
-    read -p "Whats the git URL?: " themerepo
-    read -p "Divergent folder name? [hit Return to skip]: " theme
-    if [ -z "$theme" ]
-    then
-        theme=$(basename $themerepo | grep -E -o '^([^.]+)' )
-    fi
-
-    echo ""
-    echo "${YELLOW}Downloading theme${NC}"
-
-    git clone $themerepo user/themes/$theme
-    rm -fr git clone $themerepo user/themes/$theme/.git
-
-    sed -i "s/\(^  theme\: \).*/\1$theme/" user/config/system.yaml
-    echo "Theme set to ${GREEN}$theme${NC}"
-else
-    echo ""
-    echo "${YELLOW}Installing default theme${NC}"
-    bin/gpm install quark
-fi
+printf "${CYAN}Which theme to install?${NC}\n"
+themes=("chassis" "quark" "custom" "none")
+select theme in "${themes[@]}"; do
+    case $theme in
+        "chassis")
+            git clone git@github.com:bitstarr/grav-theme-chassis.git user/themes/chassis/
+            rm -fr git clone $themerepo user/themes/$theme/.git
+            sed -i "s/\(^  theme\: \).*/\1$theme/" user/config/system.yaml
+        break
+            ;;
+        "quark")
+            git clone git@github.com:getgrav/grav-theme-quark.git user/themes/quark/
+            rm -fr git clone $themerepo user/themes/$theme/.git
+            sed -i "s/\(^  theme\: \).*/\1$theme/" user/config/system.yaml
+        break
+            ;;
+        "custom")
+            read -p "Whats the git URL?: " themerepo
+            read -p "Folder name of the theme? [hit Return to skip]: " themename
+            if [ -z "$themename" ]
+            then
+                themename=$(basename $themerepo | grep -E -o '^([^.]+)' )
+            fi
+            git clone $themerepo user/themes/$themename
+            rm -fr git clone $themerepo user/themes/$themename/.git
+            sed -i "s/\(^  theme\: \).*/\1$themename/" user/config/system.yaml
+        break
+            ;;
+	"none")
+        break
+        ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
 
 # add user
 echo ""
 read -p "Do you want to add a user? [yes]: " yn
 if echo "$yn" | grep -iq "^y" ;then
     echo ""
-    echo "${YELLOW}Adding a user${NC}"
-    ./bin/plugin login newuser -s enabled
+    printf "${CYAN}Adding a user${NC}\n"
+    ./bin/plugin login new-user -s enabled
 fi
 
 # clean up
 echo ""
-echo "${YELLOW}Final cleanup${NC}"
+printf "${CYAN}Final cleanup${NC}\n"
 rm -rf .git
+rm .ddev/initialize.sh
 mv .ddev/readme.md .
-sed -i "s/# ddevhostname.*/# $ddevhostname/g" readme.md
+mv .ddev/Makefile .
 
 echo ""
-echo "${YELLOW}Fresh git${NC}"
+printf "${CYAN}Fresh git${NC}\n"
 git init
-git update-index --chmod=+x .ddev/initialize.sh
-git update-index --chmod=+x .ddev/install.sh
 
 echo ""
-echo "We are done here. ${GREEN}Happy coding!${NC}"
+printf "We are done here. ${GREEN}Happy coding!${NC}\n"
 echo "If you need to manage your pages in a repository, please set this up now."
 echo ""
