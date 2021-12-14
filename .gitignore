@@ -4,7 +4,7 @@
 !/.ddev/config.yaml
 !/.ddev/nginx_full/
 !/.ddev/nginx_full/nginx-site.conf
-!/.ddev/*.sh
+!/.ddev/Makefile
 !/user/
 !/user/**
 !/Makefile
