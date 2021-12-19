@@ -1,8 +1,8 @@
 title: 'Website Title'
 default_lang: de
 author:
-  name: 'Joe Bloggs'
-  email: joe@example.com
+  name: ''
+  email: ''
 metadata:
   generator: ''
   description: ''
@@ -13,28 +13,5 @@ summary:
   delimiter: '==='
 blog:
   route: /blog
-
-footer:
-  menu:
-    - title: Startseite
-      url: /
-    - title: Impressum
-      url: /impressum
-    - title: Datenschutz
-      url: /datenschutz
-  social:
-    - title: Facebook
-      icon: facebook
-      url: http://www.facebook.com/XX
-    - title: Instagram
-      icon: instagram
-      url: https://www.instagram.com/XX
-    - title: Twitter
-      icon: twitter
-      url: http://www.twitter.com/XX
-    - title: Xing
-      icon: xing
-      url: http://www.xing.com/XX
-    - title: YouTube
-      icon: youtube
-      url: https://www.youtube.com/XX
+taxonomies:
+  - navarea

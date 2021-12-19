@@ -1,13 +1,19 @@
 show_github_msg: false
 widgets_display:
-  dashboard-maintenance: 'true'
-  dashboard-statistics: 'true'
-  dashboard-notifications: 'false'
-  dashboard-feed: 'false'
-  dashboard-pages: 'true'
+  dashboard-maintenance: true
+  dashboard-statistics: true
+  dashboard-notifications: false
+  dashboard-feed: false
+  dashboard-pages: true
+notifications:
+  feed: false
+  dashboard: false
+  plugins: false
+  themes: false
 hide_page_types:
   - root
   - form
+  - flex-objects
   - external
   - error
 hide_modular_page_types:
