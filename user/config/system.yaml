@@ -15,6 +15,10 @@ session:
   initialize: false
   name: grav-site
 
+languages:
+  supported: [ de, en ]
+  include_default_lang: false
+
 cache:
   gzip: true
 

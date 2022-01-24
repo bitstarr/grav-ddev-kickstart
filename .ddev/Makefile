@@ -100,7 +100,7 @@ clear:
 
 .PHONY: favicon
 favicon:
-	@find $(THEME_PATH)/dist/favicon/ \( ! -name "*.php" \) -type f -print0 | xargs -I{} -0 cp {} .
+	@find $(THEME_PATH)/dist/favicons/ \( ! -name "*.php" \) -type f -print0 | xargs -I{} -0 cp {} .
 
 .PHONY: themeinit
 themeinit:
