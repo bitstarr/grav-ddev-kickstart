@@ -58,6 +58,8 @@ grav_prepare:
 	@mv -n grav/.[!.]* ./
 	@rm -rf grav/
 	@mkdir -p user/data/flex-objects
+	@./bin/grav install
+
 
 # optional for automating deployments on different enviroments
 grav_theme:
@@ -85,11 +87,9 @@ endif
 update:
 	@echo ""
 	@echo "$(C_CYAN)Installing and updating dependencies$(C_NC)"
-	@mv robots.txt robots.txt.bak
 	@./bin/grav install
 	@./bin/gpm selfupgrade
 	@./bin/gpm update
-	@mv robots.txt.bak robots.txt
 	@git checkout readme.md
 #   @git -C user/plugins/directus pull
 
@@ -98,8 +98,8 @@ clear:
 	@./bin/grav cache
 
 
-.PHONY: favicon
-favicon:
+.PHONY: favicons
+favicons:
 	@find $(THEME_PATH)/dist/favicons/ \( ! -name "*.php" \) -type f -print0 | xargs -I{} -0 cp {} .
 
 .PHONY: themeinit

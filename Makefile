@@ -5,7 +5,7 @@ C_CYAN		= \033[0;36m
 C_NC		= \033[0m # No Color
 
 .PHONY: init
-init: is_installed grav_prepare update
+init: is_installed grav_prepare
 	@chmod +x .ddev/initialize.sh
 	@.ddev/initialize.sh
 
@@ -29,15 +29,4 @@ grav_prepare:
 	@mv -n grav/.[!.]* ./
 	@rm -rf grav/
 	@mkdir -p user/data/flex-objects
-
-.PHONY: update
-update:
-	@echo ""
-	@echo "$(C_CYAN)Installing and updating dependencies$(C_NC)"
-	@mv robots.txt robots.txt.bak
 	@./bin/grav install
-	@./bin/gpm selfupgrade
-	@./bin/gpm update
-	@mv robots.txt.bak robots.txt
-	@git checkout readme.md
-#   @git -C user/plugins/directus pull

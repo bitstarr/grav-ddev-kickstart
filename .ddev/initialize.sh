@@ -14,7 +14,7 @@ then
     printf "${RED}Please configure ddev manually!${NC}\n"
 else
     sed -i "s/\(^name\: \).*/\1$ddevhostname/" .ddev/config.yaml
-    mv user/ddevhostname.ddev.site/ user/$ddevhostname.ddev.site
+    mv user/env/ddevhostname.ddev.site/ user/env/$ddevhostname.ddev.site
     sed -i "s/# ddevhostname.*/# $ddevhostname/g" .ddev/readme.md
     echo ""
     printf "Hostname for ddev set to ${GREEN}$ddevhostname${NC}\n"
