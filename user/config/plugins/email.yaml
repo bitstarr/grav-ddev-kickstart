@@ -1,0 +1,12 @@
+enabled: true
+from: 'info@domain.de'
+from_name: 'Website-Formular domain.de'
+to: 'info@domain.de'
+to_name: 'Firmenname'
+queue:
+  enabled: false
+  flush_frequency: '* * * * *'
+  flush_msg_limit: 10
+  flush_time_limit: 100
+content_type: text/plain
+debug: false

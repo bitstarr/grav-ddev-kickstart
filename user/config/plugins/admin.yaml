@@ -18,3 +18,60 @@ hide_page_types:
   - error
 hide_modular_page_types:
   # - modular/bullets
+
+# route: '/verwaltung'
+
+
+# logo_text: FVSR
+whitelabel:
+  logo_custom:
+    user/themes/chassis/dist/icons/logo.svg:
+      name: logo.svg
+      type: image/svg
+      size: 13900
+      path: user/themes/chassis/dist/icons/logo.svg
+  logo_login:
+    user/themes/chassis/dist/icons/logo.svg:
+      name: logo.svg
+      type: image/svg
+      size: 13900
+      path: user/themes/chassis/dist/icons/logo.svg
+  color_scheme:
+    accents:
+      primary-accent: button
+      secondary-accent: notice
+      tertiary-accent: critical
+    colors:
+      logo-bg: '#eee'
+      logo-link: '#111'
+      nav-bg: '#001d2a'
+      nav-text: '#e2e2e2'
+      nav-link: '#ffffff'
+      nav-selected-bg: '#003c54'
+      nav-selected-link: '#ffffff'
+      nav-hover-bg: '#00749d'
+      nav-hover-link: '#ffffff'
+      toolbar-bg: '#ffffff'
+      toolbar-text: '#3D424E'
+      page-bg: '#F6F6F6'
+      page-text: '#6f6f6f'
+      page-link: '#008fdb'
+      content-bg: '#ffffff'
+      content-text: '#6f6f6f'
+      content-link: '#008fdb'
+      content-link2: '#ff4647'
+      content-header: '#414147'
+      content-tabs-bg: '#e2e2e2'
+      content-tabs-text: '#6f6f6f'
+      button-bg: '#00749d'
+      button-text: '#ffffff'
+      notice-bg: '#007987'
+      notice-text: '#ffffff'
+      update-bg: '#007f5f'
+      update-text: '#ffffff'
+      critical-bg: '#830014'
+      critical-text: '#ffffff'
+      content-highlight: '#fff9e5'
+    name: 'Chassis'
+  custom_css: "#admin-login-wrapper {\nbackground:\n    radial-gradient( ellipse at left bottom, rgba( 104, 128, 138, .4 ) 10%, rgba( 138, 114, 76, 0 ) 40% ),\n    linear-gradient( to bottom, rgba( 57, 173, 219, .25 ) 0%, rgba( 42, 60, 87, .4 ) 100% ),\n    linear-gradient( -45deg, #670d10 0%, #092756 100% );\n}"
+  custom_presets: "name: 'Chassis'\ncolors:\n    logo-bg: '#eee'\n    logo-link: '#001d2a'\n    nav-bg: '#001d2a'\n    nav-text: '#e2e2e2'\n    nav-link: '#ffffff'\n    nav-selected-bg: '#003c54'\n    nav-selected-link: '#ffffff'\n    nav-hover-bg: '#00749d'\n    nav-hover-link: '#ffffff'\n    toolbar-bg: '#ffffff'\n    toolbar-text: '#3D424E'\n    page-bg: '#F6F6F6'\n    page-text: '#6f6f6f'\n    page-link: '#008fdb'\n    content-bg: '#ffffff'\n    content-text: '#6f6f6f'\n    content-link: '#008fdb'\n    content-link2: '#da4b46'\n    content-header: '#414147'\n    content-tabs-bg: '#e2e2e2'\n    content-tabs-text: '#6f6f6f'\n    content-highlight: '#fff9e5'\n    button-bg: '#00749d'\n    button-text: '#ffffff'\n    notice-bg: '#007987'\n    notice-text: '#ffffff'\n    update-bg: '#007f5f'\n    update-text: '#ffffff'\n    critical-bg: '#830014'\n    critical-text: '#ffffff'\naccents:\n    primary-accent: button\n    secondary-accent: notice\n    tertiary-accent: critical\n"

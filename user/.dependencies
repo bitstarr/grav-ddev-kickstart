@@ -31,11 +31,31 @@ git:
         url: https://github.com/trilbymedia/grav-plugin-flex-objects
         path: user/plugins/flex-objects
         branch: master
-    devtools:
-        url: https://github.com/getgrav/grav-plugin-devtools
-        path: user/plugins/devtools
-        branch: master
     svg-extension:
         url: https://github.com/bitstarr/grav-plugin-svg-extension
         path: user/plugins/svg-extension
         branch: master
+    devtools:
+        url: https://github.com/getgrav/grav-plugin-devtools
+        path: user/plugins/devtools
+        branch: master
+    feed:
+        url: https://github.com/getgrav/grav-plugin-feed
+        path: user/plugins/feed
+        branch: master
+    pagination:
+        url: https://github.com/getgrav/grav-plugin-pagination
+        path: user/plugins/pagination
+        branch: master
+    draft-preview:
+        url: https://github.com/bitstarr/grav-plugin-draft-preview
+        path: user/plugins/draft-preview
+        branch: main
+    shortcode-core:
+        url: https://github.com/getgrav/grav-plugin-shortcode-core
+        path: user/plugins/shortcode-core
+        branch: master
+    shortcode-gallery:
+        url: https://github.com/bitstarr/grav-plugin-shortcode-gallery
+        path: user/plugins/shortcode-gallery
+        branch: main
