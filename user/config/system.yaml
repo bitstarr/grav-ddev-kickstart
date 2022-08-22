@@ -1,3 +1,5 @@
+default_locale: 'de'
+
 home:
   alias: '/home'
 
@@ -17,7 +19,9 @@ session:
 
 languages:
   supported: [ de, en ]
+  default_lang: de
   include_default_lang: false
+  include_default_lang_file_extension: false
 
 cache:
   gzip: true
