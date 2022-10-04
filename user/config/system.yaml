@@ -31,6 +31,9 @@ images:
   defaults:
     loading: lazy
 
+accounts:
+  avatar: multiavatar
+
 pwd_regex: '^[ -~]{8,}$'
 
 env:

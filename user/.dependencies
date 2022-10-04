@@ -7,10 +7,6 @@ git:
         url: https://github.com/getgrav/grav-plugin-error
         path: user/plugins/error
         branch: master
-    markdown-notices:
-        url: https://github.com/getgrav/grav-plugin-markdown-notices
-        path: user/plugins/markdown-notices
-        branch: master
     form:
         url: https://github.com/getgrav/grav-plugin-form
         path: user/plugins/form
@@ -27,6 +23,10 @@ git:
         url: https://github.com/getgrav/grav-plugin-admin
         path: user/plugins/admin
         branch: master
+    draft-preview:
+        url: https://github.com/bitstarr/grav-plugin-draft-preview
+        path: user/plugins/draft-preview
+        branch: main
     flex-objects:
         url: https://github.com/trilbymedia/grav-plugin-flex-objects
         path: user/plugins/flex-objects
@@ -35,22 +35,30 @@ git:
         url: https://github.com/bitstarr/grav-plugin-svg-extension
         path: user/plugins/svg-extension
         branch: master
-    devtools:
-        url: https://github.com/getgrav/grav-plugin-devtools
-        path: user/plugins/devtools
-        branch: master
     feed:
         url: https://github.com/getgrav/grav-plugin-feed
         path: user/plugins/feed
+        branch: master
+    twig-extensions:
+        url: https://github.com/Perlkonig/grav-plugin-twig-extensions
+        path: user/plugins/twig-extensions
         branch: master
     pagination:
         url: https://github.com/getgrav/grav-plugin-pagination
         path: user/plugins/pagination
         branch: master
-    draft-preview:
-        url: https://github.com/bitstarr/grav-plugin-draft-preview
-        path: user/plugins/draft-preview
-        branch: main
+    taxonomylist:
+        url: https://github.com/getgrav/grav-plugin-taxonomylist
+        path: user/plugins/taxonomylist
+        branch: master
+    markdown-notices:
+        url: https://github.com/getgrav/grav-plugin-markdown-notices
+        path: user/plugins/markdown-notices
+        branch: master
+    markdown-details:
+        url: https://github.com/bitstarr/grav-plugin-markdown-details
+        path: user/plugins/markdown-details
+        branch: master
     shortcode-core:
         url: https://github.com/getgrav/grav-plugin-shortcode-core
         path: user/plugins/shortcode-core
@@ -59,3 +67,15 @@ git:
         url: https://github.com/bitstarr/grav-plugin-shortcode-gallery
         path: user/plugins/shortcode-gallery
         branch: main
+    image-captions:
+        url: https://github.com/trilbymedia/grav-plugin-image-captions
+        path: user/plugins/image-captions
+        branch: master
+    breadcrumbs:
+        url: https://github.com/getgrav/grav-plugin-breadcrumbs
+        path: user/plugins/breadcrumbs
+        branch: master
+    devtools:
+        url: https://github.com/getgrav/grav-plugin-devtools
+        path: user/plugins/devtools
+        branch: master

@@ -3,5 +3,6 @@ built_in_css: false
 base_classes: notice
 level_classes:
   - notice--blank
+  - notice--success
   - notice--warning
   - notice--error
