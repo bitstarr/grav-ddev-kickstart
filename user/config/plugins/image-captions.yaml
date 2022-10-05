@@ -1,0 +1,5 @@
+enabled: true
+built_in_css: false
+scope: img.exhibit
+figure_class: image
+figcaption_class: image__caption
