@@ -1,5 +1,6 @@
 ---
 title: Kontakt
+cache_enable: false
 taxonomy:
   navarea: ['main', 'footer']
 
@@ -72,7 +73,6 @@ form:
       value: THEME_C.FORM.FIELD.SUBMIT
 
   process:
-    matchmail: true
     email:
       from: "{{ config.plugins.email.from }}"
       from_name: "{{ form.value.name }}"
@@ -81,11 +81,13 @@ form:
       subject: "Anfrage via Kontaktformular"
       body: "{% include 'email/contact.txt.twig' %}"
       content_type: 'text/plain'
+
     # save:
     #   fileprefix: contact-
     #   dateformat: Ymd-His-u
     #   extension: txt
     #   body: "{% include 'email/contact.txt.twig' %}"
+
     message: THEME_C.FORM.THANKS
     reset: true
 ---
