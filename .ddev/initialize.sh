@@ -30,13 +30,13 @@ select theme in "${themes[@]}"; do
     case $theme in
         "chassis")
             git clone git@github.com:bitstarr/grav-theme-chassis.git user/themes/chassis/
-            rm -fr git clone $themerepo user/themes/$theme/.git
+            rm -fr user/themes/$theme/.git
             sed -i "s/\(^  theme\: \).*/\1$theme/" user/config/system.yaml
         break
             ;;
         "quark")
             git clone git@github.com:getgrav/grav-theme-quark.git user/themes/quark/
-            rm -fr git clone $themerepo user/themes/$theme/.git
+            rm -fr user/themes/quark/.git
             sed -i "s/\(^  theme\: \).*/\1$theme/" user/config/system.yaml
         break
             ;;
@@ -48,7 +48,7 @@ select theme in "${themes[@]}"; do
                 themename=$(basename $themerepo | grep -E -o '^([^.]+)' )
             fi
             git clone $themerepo user/themes/$themename
-            rm -fr git clone $themerepo user/themes/$themename/.git
+            rm -fr user/themes/$themename/.git
             sed -i "s/\(^  theme\: \).*/\1$themename/" user/config/system.yaml
         break
             ;;
@@ -58,6 +58,17 @@ select theme in "${themes[@]}"; do
         *) echo "invalid option $REPLY";;
     esac
 done
+
+# add company-details
+echo ""
+echo "company-details plugin: https://github.com/bitstarr/grav-plugin-company-detail"
+read -p "Do you want to include company-details plugin as part of the project? [yes]: " yn
+if echo "$yn" | grep -iq "^y" ;then
+    echo ""
+    printf "${CYAN}Adding a company-details plugin${NC}\n"
+    git clone https://github.com/bitstarr/grav-plugin-company-details user/plugin/company-details
+    rm -rf user/plugin/company-details/.git
+fi
 
 # add user
 echo ""
