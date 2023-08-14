@@ -66,8 +66,8 @@ read -p "Do you want to include company-details plugin as part of the project? [
 if echo "$yn" | grep -iq "^y" ;then
     echo ""
     printf "${CYAN}Adding a company-details plugin${NC}\n"
-    git clone https://github.com/bitstarr/grav-plugin-company-details user/plugin/company-details
-    rm -rf user/plugin/company-details/.git
+    git clone https://github.com/bitstarr/grav-plugin-company-details user/plugins/company-details
+    rm -rf user/plugins/company-details/.git
 fi
 
 # add user
