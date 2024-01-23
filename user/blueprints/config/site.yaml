@@ -1,0 +1,30 @@
+extends@:
+  type: site
+  context: blueprints://config
+form:
+    fields:
+        content:
+            type: section
+            title: PLUGIN_ADMIN.DEFAULTS
+            underline: true
+            fields:
+                env.state:
+                    type: select
+                    label: THEME_C.SITE.ENV_STATUS
+                    size: large
+                    default: production
+                    options:
+                        production: THEME_C.SITE.ENV_PROD
+                        stage: THEME_C.SITE.ENV_STG
+                        preview: THEME_C.SITE.ENV_PRV
+                        dev: THEME_C.SITE.ENV_DEV
+                env.banner:
+                    type: toggle
+                    label: THEME_C.SITE.ENV_BANNER
+                    highlight: 1
+                    default: 0
+                    options:
+                        1: PLUGIN_ADMIN.YES
+                        0: PLUGIN_ADMIN.NO
+                    validate:
+                        type: bool
