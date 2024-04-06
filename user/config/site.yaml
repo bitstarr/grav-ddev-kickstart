@@ -15,5 +15,3 @@ blog:
   route: /blog
 taxonomies:
   - navarea
-env:
-  state: production
