@@ -24,7 +24,7 @@ grav_prepare:
 	@rm grav.zip
 	@rm -rf grav/user/
 	@rm -rf grav/.github/
-	@rm grav/README.md grav/LICENSE.txt grav/CONTRIBUTING.md grav/CODE_OF_CONDUCT.md grav/CHANGELOG.md
+	@rm grav/README.md grav/LICENSE.txt grav/CONTRIBUTING.md grav/CODE_OF_CONDUCT.md grav/CHANGELOG.md grav/.htaccess grav/robots.txt
 	@mv -n grav/* ./
 	@mv -n grav/.[!.]* ./
 	@rm -rf grav/

@@ -8,5 +8,6 @@
 !/.ddev/Makefile
 !/user/
 !/user/**
+!/.htaccess
 !/Makefile
 !/readme.md
