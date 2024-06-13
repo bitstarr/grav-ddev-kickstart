@@ -16,7 +16,7 @@ RewriteEngine On
 ## Begin - AI Bots
 # There a lot of good reasons, to block AI bots.
 # https://ethanmarcotte.com/wrote/blockin-bots/
-RewriteCond %{HTTP_USER_AGENT} (AdsBot-Google|Amazonbot|anthropic-ai|Applebot|AwarioRssBot|AwarioSmartBot|Bytespider|CCBot|ChatGPT|ChatGPT-User|Claude-Web|ClaudeBot|cohere-ai|DataForSeoBot|Diffbot|FacebookBot|FacebookBot|Google-Extended|GPTBot|ImagesiftBot|magpie-crawler|omgili|Omgilibot|peer39_crawler|PerplexityBot|Seekr|YouBot) [NC]
+RewriteCond %{HTTP_USER_AGENT} (AdsBot-Google|Amazonbot|anthropic-ai|Applebot|Applebot-Extended|AwarioRssBot|AwarioSmartBot|Bytespider|CCBot|ChatGPT|ChatGPT-User|Claude-Web|ClaudeBot|cohere-ai|DataForSeoBot|Diffbot|FacebookBot|FacebookBot|Google-Extended|GPTBot|ImagesiftBot|magpie-crawler|omgili|Omgilibot|peer39_crawler|PerplexityBot|Seekr|YouBot) [NC]
 RewriteRule ^ – [F]
 ## End - AI Bots
 
