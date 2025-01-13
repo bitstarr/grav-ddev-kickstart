@@ -19,7 +19,7 @@ hide_page_types:
 hide_modular_page_types:
   # - modular/bullets
 
-# route: '/verwaltung'
+route: '/verwaltung'
 
 
 # logo_text: FVSR
