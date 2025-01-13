@@ -16,7 +16,7 @@ form:
       placeholder: THEME_C.FORM.FIELD.NAME_PH
       autocomplete: on
       type: text
-      outerclasses: levitate
+      outerclasses: encapsulate
       validate:
         required: true
 
@@ -25,7 +25,7 @@ form:
       label: THEME_C.FORM.FIELD.EMAIL
       placeholder: THEME_C.FORM.FIELD.EMAIL_PH
       type: email
-      outerclasses: levitate
+      outerclasses: encapsulate
       validate:
         required: true
 
@@ -34,21 +34,21 @@ form:
       label: THEME_C.FORM.FIELD.PHONE
       placeholder: THEME_C.FORM.FIELD.PHONE_PH
       type: text
-      outerclasses: levitate
+      outerclasses: encapsulate
 
     text:
       id: field-text
       label: THEME_C.FORM.FIELD.MESSAGE
       placeholder: THEME_C.FORM.FIELD.MESSAGE_PH
       type: textarea
-      outerclasses: levitate
+      outerclasses: encapsulate
       rows: 4
       validate:
         required: true
 
     personality:
       id: field-personality
-      outerclasses: text-input
+      outerclasses: inputpeel
       label: THEME_C.FORM.FIELD.SPAM_Q
       type: radio
       options:
@@ -98,6 +98,3 @@ Einsteinstraße 12<br>
 
 Telefon: (+49) 371 / 12 34 56<br>
 E-Mail: [email link=true]info@domain.de[/email]
-
-## Direkt Kontakt aufnehmen
-{% include "forms/form.html.twig" with { form: forms('kontakt') } %}
