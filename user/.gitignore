@@ -6,6 +6,7 @@ data/*
 # !data/flex-objects
 plugins/*
 !plugins/.*
+# !plugins/company-details/
 security.yaml
 versions.yaml
 

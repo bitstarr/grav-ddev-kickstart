@@ -1,5 +1,6 @@
 ---
 title: Home
+visible: false
 body_classes: dummy-page
 ---
 

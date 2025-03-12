@@ -1,6 +1,6 @@
 extends@:
-  type: site
-  context: blueprints://config
+    type: site
+    context: blueprints://config
 form:
     fields:
         content:
