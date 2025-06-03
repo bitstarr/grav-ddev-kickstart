@@ -1,0 +1,8 @@
+---
+title: 'Universal Module: Text in columns, full spread'
+layout:
+    columns: 2col
+    spread: full
+---
+
+Ehe wir auf den Gegenstand dieses Capitels eingehen, muß ich einige Bemerkungen voraussenden, um zu zeigen, wie der Kampf um’s Dasein sich auf die natürliche Zuchtwahl bezieht. Es ist im letzten Capitel gezeigt worden, daß die Organismen im Naturzustande eine individuelle Variabilität besitzen, und ich wüßte in der That nicht, daß dies je bestritten worden wäre. Es ist für uns unwesentlich, ob eine Menge von zweifelhaften Formen Art, Unterart oder Varietät genannt werde; welchen Rang z. B. die 200–300 zweifelhaften Formen britischer Pflanzen einzunehmen berechtigt sind, wenn die Existenz ausgeprägter Varietäten zulässig ist. Aber das bloße Vorhandensein individueller Variabilität und einiger weniger wohlausgeprägter Varietäten, wenn auch nothwendig als Grundlage für die Arbeit, hilft uns nicht viel, um zu begreifen, wie Arten in der Natur entstehen. Wie sind alle jene vortrefflichen Anpassungen von einem Theile der Organisation an den andern und an die äußeren Lebensbedingungen und von einem organischen Wesen an ein anderes bewirkt worden? Wir sehen diese schöne Anpassung außerordentlich deutlich bei dem Specht und der Mistelpflanze und nur wenig minder deutlich am niedersten Parasiten, welcher sich an das Haar eines Säugethieres oder die Federn eines Vogels anklammert; am Bau des Käfers, welcher in’s Wasser untertaucht; am befiederten Samen, der vom leichtesten Lüftchen getragen wird; kurz wir sehen schöne Anpassungen überall und in jedem Theile der organischen Welt. 

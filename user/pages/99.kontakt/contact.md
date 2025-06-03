@@ -7,7 +7,6 @@ taxonomy:
 form:
   name: kontakt
   action: "#kontakt"
-  scope: ''
   classes: form
   fields:
     name:
