@@ -48,7 +48,11 @@ endif
 grav_prepare:
 	@echo ""
 	@echo "$(C_CYAN)Downloading and preparing grav CMS$(C_NC)"
-	@curl -o grav.zip -SL https://getgrav.org/download/core/grav/latest
+	@curl -s https://api.github.com/repos/getgrav/grav/releases/latest \
+	| grep "browser_download_url.*grav-v1\.7.*\.zip" \
+	| cut -d : -f 2,3 \
+	| tr -d \" \
+	| xargs curl -L -o grav.zip
 	@unzip grav.zip -d ./ > /dev/null
 	@rm grav.zip
 	@rm -rf grav/user/
