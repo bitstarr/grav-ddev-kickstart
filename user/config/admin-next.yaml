@@ -1,0 +1,38 @@
+ui:
+  branding:
+    mode: custom
+    text: Grav
+    logoLight: ''
+    logoDark: ''
+    title: ''
+    subtitle: ''
+    showPoweredBy: false
+    favicon: ''
+  defaults:
+    colorMode: ''
+    accentHue: 221
+    accentSaturation: 83
+    fontFamily: inter
+    fontSize: normal
+    editorMode: normal
+    editorKeymap: default
+    editorStickyToolbar: true
+    editorFixedHeight: 0
+    adminLanguage: de-DE
+    pagesPerPage: 20
+    pagesViewMode: tree
+    usersViewMode: cards
+    groupsViewMode: cards
+    pluginsViewMode: cards
+    themesViewMode: cards
+  settings:
+    autoSaveEnabled: false
+    autoSaveToolbarUndo: true
+    autoSaveBatchWindowMs: 0
+    collabEnabled: true
+    menubarLinks:
+      -
+        label: Handbuch
+        url: 'https://docs.foo.bar'
+        icon: fa-book-bookmark
+        external: true

@@ -9,6 +9,8 @@ plugins/*
 # !plugins/company-details/
 security.yaml
 versions.yaml
+api-private.php
+security-private.php
 
 # remove if you will make the theme part of your project
 themes/*

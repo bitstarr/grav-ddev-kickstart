@@ -4,6 +4,8 @@ C_YELLOW	= \033[0;33m
 C_CYAN		= \033[0;36m
 C_NC		= \033[0m # No Color
 
+GRAV_VERSION ?= 2.*
+
 .PHONY: init
 init: is_installed grav_prepare
 	@chmod +x .ddev/initialize.sh
@@ -19,11 +21,13 @@ endif
 grav_prepare:
 	@echo ""
 	@echo "$(C_CYAN)Downloading and preparing grav CMS$(C_NC)"
-	@curl -s https://api.github.com/repos/getgrav/grav/releases/latest \
-	| grep "browser_download_url.*grav-v1\.7.*\.zip" \
-	| cut -d : -f 2,3 \
-	| tr -d \" \
-	| xargs curl -L -o grav.zip
+	@GRAV_TAG=$$(git ls-remote --tags --refs https://github.com/getgrav/grav.git 'refs/tags/$(GRAV_VERSION)' \
+		| sed 's|.*refs/tags/||' \
+		| grep -E '^[0-9]+(\.[0-9]+)*$$' \
+		| sort -V | tail -n1); \
+	test -n "$$GRAV_TAG" || { echo "$(C_RED)No grav release matching $(GRAV_VERSION)$(C_NC)"; exit 1; }; \
+	echo "Using grav $$GRAV_TAG"; \
+	curl -o grav.zip -SL "https://github.com/getgrav/grav/releases/download/$$GRAV_TAG/grav-v$$GRAV_TAG.zip"
 	@unzip grav.zip -d ./ > /dev/null
 	@rm grav.zip
 	@rm -rf grav/user/
