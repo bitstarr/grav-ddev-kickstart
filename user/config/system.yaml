@@ -34,4 +34,8 @@ images:
 accounts:
   avatar: multiavatar
 
+strict_mode:
+  twig2_compat: false
+  twig3_compat: true
+
 pwd_regex: '^[ -~]{8,}$'

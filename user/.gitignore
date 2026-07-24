@@ -7,8 +7,13 @@ data/*
 plugins/*
 !plugins/.*
 # !plugins/company-details/
-security.yaml
 versions.yaml
+
+# grav 2.0
+accounts/.htaccess
+config/.htaccess
+data/.htaccess
+env/.htaccess
 api-private.php
 security-private.php
 
