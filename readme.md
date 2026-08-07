@@ -60,3 +60,7 @@ I decided to block AI bots from crawling my precious content. There are sections
 ## robots.txt
 
 I use a pattern to manage robots.txt content based on enviroments in my boilerplate theme. That's why it's been removed from the web root on `install`. If you're not using such a pattern, remove the robots.txt attribute from the prepare part in the makefile. Learn more about [enviroment based robots.txt](https://learn.getgrav.org/17/cookbook/general-recipes#display-different-robots-txt-contents-for-differen).
+
+## Style Guide
+
+I Added a `style-guide` in pages. This is a story book like approach to display elements in use and also a handbook for content editors. It is taylored to my boilerplat theme [Chassis](https://github.com/bitstarr/grav-theme-chassis). You can either delete it before initialization or make use of the general idea (by extracting the relevant parts from the theme).

@@ -33,6 +33,6 @@ ui:
     menubarLinks:
       -
         label: Handbuch
-        url: 'https://docs.foo.bar'
+        url: '/style-guide'
         icon: fa-book-bookmark
         external: true
