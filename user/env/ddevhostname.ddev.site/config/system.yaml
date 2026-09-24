@@ -4,6 +4,7 @@ cache:
 debugger:
   enabled: true
   twig: true
+  tokn: 'dev'
   shutdown:
     close_connection: true
 
